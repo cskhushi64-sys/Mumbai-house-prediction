@@ -14,7 +14,7 @@ area = st.number_input("Area (sqft)", 200, 5000)
 bedrooms = st.number_input("Bedrooms", 1, 10)
 bathrooms = st.number_input("Bathrooms", 1, 10)
 parking = st.number_input("Parking Spaces", 0, 5)
-location = st.selectbox("locality", encoder["locality"].classes_)
+locality = st.selectbox("locality", encoder["locality"].classes_)
 
 
 # Create dataframe
@@ -23,7 +23,7 @@ df = pd.DataFrame({
     "bedrooms": [bedrooms],
     "bathrooms": [bathrooms],
     "parking": [parking],
-    "location": [locality]
+    "locality": [locality]
 })
 
 if st.button("Predict Price"):

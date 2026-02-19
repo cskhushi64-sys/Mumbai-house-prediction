@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load trained pipeline model
-model = joblib.load("mumbai_house_price_model.pkl")
+model = joblib.load("mumbai_house_model.pkl")
 
 st.title("Mumbai House Price Prediction")
 

@@ -45,6 +45,6 @@ df = pd.DataFrame({
 })
 
 if st.button("Predict Price"):
-    df["location"] = encoder["location"].transform(df["location"])
+    df["location"] = encoder["Location"].transform(df["location"])
     prediction = model.predict(df)
     st.success(f"Estimated Price: ₹ {prediction[0]:,.2f}")

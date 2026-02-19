@@ -41,10 +41,9 @@ df = pd.DataFrame({
     "bedrooms": [bedrooms],
     "bathrooms": [bathrooms],
     "parking": [parking],
-    "location": [location]
+    "location": encoder.transform([location])
 })
 
 if st.button("Predict Price"):
-    df["location"] = encoder["Location"].transform(df["location"])
     prediction = model.predict(df)
     st.success(f"Estimated Price: ₹ {prediction[0]:,.2f}")

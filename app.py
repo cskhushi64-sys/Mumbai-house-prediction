@@ -4,6 +4,7 @@ import joblib
 
 # Load trained pipeline model
 model = joblib.load("mumbai_house_model.pkl")
+encoder = joblib.load("label_encoder.pkl")
 
 st.title("Mumbai House Price Prediction")
 
@@ -13,17 +14,8 @@ area = st.number_input("Area (sqft)", 200, 5000)
 bedrooms = st.number_input("Bedrooms", 1, 10)
 bathrooms = st.number_input("Bathrooms", 1, 10)
 parking = st.number_input("Parking Spaces", 0, 5)
+location = st.selectbox("Location", encoder.classes_)
 
-location = st.selectbox(
-    "Location",
-    [
-        "Andheri West",
-        "Bandra",
-        "Borivali",
-        "Thane",
-        "Navi Mumbai"
-    ]
-)
 
 # Create dataframe
 df = pd.DataFrame({
